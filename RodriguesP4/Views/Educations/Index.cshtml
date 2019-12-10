@@ -7,7 +7,11 @@
 <h2>Education</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if (User.IsInRole("admin"))
+    {
+        <a asp-action="Create">Create New</a>
+    }
+
     <a asp-controller="Resume" asp-action="Index"></a>
 </p>
 <table class="table">
@@ -44,10 +48,18 @@
                 @Html.DisplayFor(modelItem => item.Start)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EducationId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EducationId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EducationId">Delete</a>
+                @if (User.IsInRole("admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.EducationId">Edit</a> 
+                }
                 
+                <a asp-action="Details" asp-route-id="@item.EducationId">Details</a> |
+                @if (User.IsInRole("admin"))
+                {
+                    <a asp-action="Delete" asp-route-id="@item.EducationId">Delete</a> 
+                }
+                
+
             </td>
         </tr>
 }

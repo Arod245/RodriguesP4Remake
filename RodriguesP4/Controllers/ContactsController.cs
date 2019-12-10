@@ -11,7 +11,8 @@ using RodriguesP4.Models;
 
 namespace RodriguesP4.Controllers
 {
-    [Authorize(Roles = "admin")]
+    
+    
     public class ContactsController : Controller
     {
         private readonly ApplicationDbContext _context;

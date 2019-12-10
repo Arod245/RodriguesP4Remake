@@ -4,51 +4,59 @@
 }
 
 
-
 @model RodriguesP4.Models.ResumeViewModel
 
 
 <h2 style="font-size: 50px;">Resume</h2>
 <body>
     <div>
+
         <p style="font-size: 20px;">
-            Technical Skills</>
+            Technical Skills
             <a href="Skills">Edit</a>
+        </p>
+        
 
 
-            @foreach (var list in this.ViewData.Model.SkillItems)
-            {
-                <li> @Html.DisplayFor(modelItem => list.Title): @Html.DisplayFor(modelItem => list.Description)</li>
-            }
+        @foreach (var list in this.ViewData.Model.SkillItems)
+        {
+            <li> @Html.DisplayFor(modelItem => list.Title): @Html.DisplayFor(modelItem => list.Description)</li>
+        }
 
     </div>
 
 
     <div>
+
         <p style="font-size: 20px;">
-            Education</>
+            Education
             <a href="Educations">Edit</a>
+        </p>
+        
 
-            @foreach (var list in this.ViewData.Model.EducationItems)
-            {
-                <li> @Html.DisplayFor(modelItem => list.Degree)-@Html.DisplayFor(modelItem => list.School)-@Html.DisplayFor(modelItem => list.Start) to @Html.DisplayFor(modelItem => list.End)</li>
-            }
+        @foreach (var list in this.ViewData.Model.EducationItems)
+        {
+            <li> @Html.DisplayFor(modelItem => list.Degree)-@Html.DisplayFor(modelItem => list.School)-@Html.DisplayFor(modelItem => list.Start) to @Html.DisplayFor(modelItem => list.End)</li>
+        }
 
 
     </div>
 
     <div>
-        <p style="font-size: 20px;">
-            Work Experience</>
-            <a href="Experiences">Edit</a>
-            @foreach (var list in this.ViewData.Model.ExperienceItems)
-            {
-                <Li>
-                    @Html.DisplayFor(modelItem => list.Title)-@Html.DisplayFor(modelItem => list.Start) to-@Html.DisplayFor(modelItem => list.End)
-                    @Html.DisplayFor(modelItem => list.Description)
-                </Li>
 
-            }
+        <p style="font-size: 20px;">
+            Work Experience
+            <a href="Experiences">Edit</a>
+        </p>
+        
+        @foreach (var list in this.ViewData.Model.ExperienceItems)
+        {
+            <Li>
+                @Html.DisplayFor(modelItem => list.Title)-@Html.DisplayFor(modelItem => list.Start) to-@Html.DisplayFor(modelItem => list.End)
+                @Html.DisplayFor(modelItem => list.Description)
+            </Li>
+
+        }
     </div>
 </body>
 
